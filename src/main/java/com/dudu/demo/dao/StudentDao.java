@@ -1,6 +1,7 @@
 package com.dudu.demo.dao;
 
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.context.annotation.Bean;
 
 import java.util.List;
@@ -16,4 +17,6 @@ import java.util.Map;
 @Mapper
 public interface StudentDao {
     List<Map<String,Object>> getAllStu();
+
+    Map<String,Object> getStuById(@Param("stuId") String stuId);
 }

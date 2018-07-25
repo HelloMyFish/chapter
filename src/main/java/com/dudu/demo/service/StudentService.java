@@ -12,4 +12,6 @@ import java.util.Map;
  */
 public interface StudentService {
     Map<String,Object> getAllStu();
+    /** 根据学生id获取学生 **/
+    Map<String,Object> getStuById(String stuId);
 }

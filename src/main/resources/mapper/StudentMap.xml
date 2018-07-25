@@ -5,4 +5,18 @@
     <select id="getAllStu" resultType="Map">
         SELECT * FROM student
     </select>
+    <sql id="stu_field">
+        sno,sname,sage,ssex
+    </sql>
+    <select id="getStuById" parameterType="String" resultType="Map">
+        SELECT
+        <include refid="stu_field"/>
+        FROM
+        student
+        <where>
+            <if test="stuId!=null">
+                AND sno = #{stuId}
+            </if>
+        </where>
+    </select>
 </mapper>

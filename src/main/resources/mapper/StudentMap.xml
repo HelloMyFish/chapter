@@ -14,8 +14,8 @@
         FROM
         student
         <where>
-            <if test="stuId!=null">
-                AND sno = #{stuId}
+            <if test="_parameter !=null">
+                AND sno = #{_stuId}
             </if>
         </where>
     </select>

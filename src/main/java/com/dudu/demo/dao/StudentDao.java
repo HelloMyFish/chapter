@@ -18,5 +18,5 @@ import java.util.Map;
 public interface StudentDao {
     List<Map<String,Object>> getAllStu();
 
-    Map<String,Object> getStuById(@Param("stuId") String stuId);
+    Map<String,Object> getStuById(String stuId);
 }

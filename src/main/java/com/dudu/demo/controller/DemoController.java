@@ -24,21 +24,8 @@ public class DemoController {
     @RequestMapping(value = "/test",method = RequestMethod.GET)
     @SystemLogAnnotation(value = "这是demo接口")
     public Map<String, Object> start(@RequestParam String name) {
-        Map<String, Object> result = new HashMap<>();
-        if (name.equals("")) {
-            result.put("error", ErrorMessage.PARAMS_EMPTY.getEnglishMsg());
-            result.put("error_message", ErrorMessage.PARAMS_EMPTY.getChineseMsg());
-            result.put("error", "params_empty");
-            result.put("error_message", "参数为空");
-            return result;
-        }
-        result.put("error", "查询成功");
-        return result;
-    }
-    @RequestMapping(value = "/test1",method = RequestMethod.POST)
-    public Map<String,Object> test(@RequestParam String name){
-        Map<String, Object> result = new HashMap<>();
-        if (name.equals("")) {
+        Map<String, Object> result = new HashMap<>(16);
+        if ("".equals(name)) {
             result.put("error", ErrorMessage.PARAMS_EMPTY.getEnglishMsg());
             result.put("error_message", ErrorMessage.PARAMS_EMPTY.getChineseMsg());
             result.put("error", "params_empty");
